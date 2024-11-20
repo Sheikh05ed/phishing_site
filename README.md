@@ -47,7 +47,7 @@
            
             fetch(url) 
                 .then(response => {
-                    if (response.ok) {
+                    if (response) {
                       preventDefault()
                         alert('Данные успешно отправлены в Telegram!');
                     } else {
