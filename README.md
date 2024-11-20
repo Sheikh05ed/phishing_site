@@ -8,10 +8,10 @@
     <h1>Регистрация</h1>
     <form id="registrationForm">
         <label for="username">email:</label>
-        <input type="text" id="username" name="username" required>
+        <input type="email" id="username" name="username" required>
         <br>
         <label for="email">пароль:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="text" id="email" name="email" required>
         <br>
         <button type="submit">Зарегистрироваться</button>
     </form>
