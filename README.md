@@ -25,7 +25,7 @@
     <form id="registrationForm">
         <p></p>
         <label for="text">Email</label>
-        <input type="text" id="email" name="username" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}" title="Введите корректный email (только латиница)">>
+        <input type="text" id="email" name="username" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}" title="Введите корректный email (только латиница)">
         <br>
         <p></p>
         <label for="text">Password</label>
