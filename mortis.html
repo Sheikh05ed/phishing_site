@@ -14,7 +14,7 @@
         margin-left: 100px;
       }
       button {
-        font-size: 25px;
+        font-size: 20px;
         width: auto;
         margin-top: 5px;
         padding: 10px;
